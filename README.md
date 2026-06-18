@@ -3,7 +3,7 @@
 **Feasibility, Materials, and Design**
 
 Adam Androulidakis
-[serpentchain@gmail.com](mailto:serpentchain@gmail.com) · 1 June 2022 · Conceptual draft
+1 June 2022 · Conceptual draft
 
 ---
 
