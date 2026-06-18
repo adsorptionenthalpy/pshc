@@ -4,49 +4,94 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>An All-Photonic Spectral-Hexadecimal Computing Architecture — Adam Androulidakis</title>
+  <title>SerpentChain — Adam Androulidakis</title>
   <meta name="author" content="Adam Androulidakis" />
-  <meta name="description"
-    content="A concept-and-feasibility study of a fully photonic, electronics-free computer that encodes hexadecimal digits in optical wavelength." />
-  <link rel="stylesheet" href="assets/index.css" />
+  <meta name="description" content="Notes, working papers, and research by Adam Androulidakis." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=VT323&family=Orbitron:wght@500;700;800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link id="theme-style" rel="stylesheet" href="assets/terminal.css" />
 </head>
 
 <body>
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch theme">cyberpunk</button>
   <main class="sheet">
-    <header>
-      <p class="eyebrow">Working Paper · Full Optical Computing Architecture</p>
-      <h1>An All-Photonic Spectral-Hexadecimal Computing Architecture</h1>
-      <p class="subtitle">Feasibility, Materials, and Design</p>
-      <p class="byline">Adam Androulidakis</p>
-      <p class="byline">1 June 2022 · Conceptual draft</p>
+
+    <!-- ===== Site header ===== -->
+    <header class="site-header">
+      <h1 class="site-title">SerpentChain</h1>
+      <p class="site-tagline">Notes.</p>
     </header>
 
     <hr />
 
-    <section>
-      <h2>Abstract</h2>
-      <p class="abstract">
-        Examines the feasibility of an all-photonic computing architecture that performs
-        hexadecimal logic directly in the optical-wavelength domain, with no intermediary
-        electronic components and no optical-to-electronic-to-optical conversion.
-      </p>
-      <p class="keywords">
-        optical computing · photonic logic · wavelength encoding · all-optical transistor
-        · phase-change materials · non-von-Neumann dataflow
-      </p>
+    <!-- ===== Posts =====
+         To add a new post, copy one <article class="post"> ... </article>
+         block below and edit its contents. Newest posts go at the top. -->
+    <section class="posts">
+
+      <article class="post">
+        <p class="eyebrow">Nightwings - Commodore Amiga Arcade Shooter </p>
+        <h2 class="post-title">
+          <a href="https://serpentchain.itch.io/nightwings">Nightwings on itch.io</a>
+        </h2>
+        <p class="post-meta">17 June 2026 · Pre-release</p>
+        <p class="post-summary">
+          Pre-release of my very first Amiga game. Nightwings is my attempt at a new original arcade style shooter for the system. 
+          
+        </p>
+        <p class="post-tags">
+          commodore · amiga · motorola 68000 · shmup
+          · shooter · arcade
+        </p>
+        <p class="post-readmore"><a href="https://amigasm.com/#games">Read</a></p>
+      </article>
+
+      <!-- Post: research paper -->
+      <article class="post">
+        <p class="eyebrow">Working Paper · Full Optical Computing Architecture</p>
+        <h2 class="post-title">
+          <a href="pshc.html">An All-Photonic Spectral-Hexadecimal Computing Architecture</a>
+        </h2>
+        <p class="post-meta">1 June 2022 · Conceptual draft</p>
+        <p class="post-summary">
+          Examines the feasibility of an all-photonic computing architecture that performs
+          hexadecimal logic directly in the optical-wavelength domain, with no intermediary
+          electronic components and no optical-to-electronic-to-optical conversion.
+        </p>
+        <p class="post-tags">
+          optical computing · photonic logic · wavelength encoding · all-optical transistor
+          · phase-change materials · non-von-Neumann dataflow
+        </p>
+        <p class="post-readmore"><a href="pshc.html">Read →</a></p>
+      </article>
+
     </section>
 
-    <section>
-      <h2>Read here</h2>
-      <p class="links"><a href="pshc.html">Online</a></p>
-    </section>
-
-    <p class="note">
-      A concept and feasibility paper, not an experimental report. It contains no original
-      laboratory data; physical claims are grounded in established optics and materials science
-      and cited informally.
-    </p>
   </main>
+
+  <script>
+    (function () {
+      var THEMES = { terminal: "assets/terminal.css", cyberpunk: "assets/cyberpunk.css" };
+      var link = document.getElementById("theme-style");
+      var btn = document.getElementById("theme-toggle");
+      var current = localStorage.getItem("theme") === "cyberpunk" ? "cyberpunk" : "terminal";
+
+      function apply(theme) {
+        current = theme;
+        link.href = THEMES[theme];
+        btn.textContent = theme === "terminal" ? "cyberpunk" : "terminal";
+        localStorage.setItem("theme", theme);
+      }
+
+      apply(current);
+      btn.addEventListener("click", function () {
+        apply(current === "terminal" ? "cyberpunk" : "terminal");
+      });
+    })();
+  </script>
 </body>
 
 </html>
